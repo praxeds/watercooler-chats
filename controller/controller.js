@@ -30,11 +30,10 @@ export const handleOauth = async (req) => {
 }
 
 export const handleCommand = async (req) => {
-
     try {
         switch (req.body.command) {
             case process.env.SLACK_COMMAND:
-                return await generateNewQuestion()
+                return generateNewQuestion()
             default:
                 return await handleError()
         }
@@ -47,18 +46,16 @@ export const handleCommand = async (req) => {
 
 export const handleAction = async (req) => {
     try {
-
         const data = JSON.parse(req.body.payload)
 
         switch (data.actions[0].value) {
             case "new_question":
-                return await replaceNewQuestion(data)
+                return replaceNewQuestion(data)
             case "new_gif":
-                return await updateSameQuestion(data)
+                return updateSameQuestion(data)
             default:
                 return await handleError()
         }
-
     } catch (error) {
         console.error(error)
         return error
