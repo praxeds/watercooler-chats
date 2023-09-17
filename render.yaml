@@ -2,6 +2,6 @@ services:
   - type: web
     name: bun
     env: docker
-    repo: https://github.com/render-examples/bun-docker
+    repo: https://github.com/praxeds/watercooler-chats
     plan: starter
-    autoDeploy: false
+    autoDeploy: true
