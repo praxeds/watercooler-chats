@@ -1,0 +1,90 @@
+body {
+  background-color: #e9e9e9;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+h1 {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  font-family: monospace;
+  font-size: 32px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #202020;
+  margin: 0;
+  padding: 0;
+  z-index: 100;
+}
+
+#slack-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  align-items: center;
+  color: #000;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  display: inline-flex;
+  font-family: Lato, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  height: 56px;
+  justify-content: center;
+  text-decoration: none;
+  width: 276px;
+  transition: all 0.2s ease-in;
+}
+
+#slack-button:hover {
+  background-color: #202020;
+  color: #fff;
+}
+
+#slack-logo {
+  height: 24px;
+  width: 24px;
+  margin-right: 12px;
+}
+
+#emoji {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(0deg);
+  animation: move-emoji 15s alternate infinite ease-in-out;
+  width: 85vh;
+  height: 85vh;
+  filter: blur(2.2vh);
+}
+
+@keyframes move-emoji {
+  0% {
+    transform: translateY(-50%) rotate(0deg);
+    left: 0;
+  }
+  100% {
+    transform: translateY(-50%) rotate(360deg);
+    left: calc(100vw - 85vh);
+  }
+}
+
+#github-logo {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  fill: #202020;
+  transition: all 0.2s ease-in;
+}
+
+#github-logo:hover {
+  width: 28px;
+  height: 28px;
+}
